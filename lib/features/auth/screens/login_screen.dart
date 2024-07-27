@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/custom_text_field.dart';
 import 'package:livingease/common/spacing.dart';
+import 'package:livingease/features/auth/widgets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -72,7 +73,20 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   inputHint: "Enter your password",
                 ),
-                heightSpacer(10),
+                heightSpacer(30),
+                CustomButton(
+                  buttonText: 'Login',
+                  buttonColor: Colors.white,
+                  onTap: () {},
+                  size: 16,
+                ),
+                heightSpacer(30),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don't have an account?"),
+                  ],
+                )
               ],
             ),
           ),
