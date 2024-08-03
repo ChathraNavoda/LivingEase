@@ -6,13 +6,13 @@ class AppTextTheme {
   static TextStyle kAppBarStyle = GoogleFonts.inter(
     color: AppColors.kSecondaryColor,
     fontWeight: FontWeight.w600,
-    fontSize: 26,
+    fontSize: 20,
   );
 
   static TextStyle kLabelStyle = GoogleFonts.inter(
     color: AppColors.kSecondaryColor,
-    fontWeight: FontWeight.w500,
-    fontSize: 16,
+    fontWeight: FontWeight.w300,
+    fontSize: 12,
   );
 
   static TextStyle kPrimaryStyle = GoogleFonts.inter(

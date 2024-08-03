@@ -60,7 +60,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
                     borderSide: const BorderSide(
-                      color: Color(0xffd1d8ff),
+                      width: 1,
+                      color: AppColors.kIndianYellow,
                     ),
                   ),
                   inputHint: "Enter your email",
@@ -77,7 +78,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
                     borderSide: const BorderSide(
-                      color: Color(0xffd1d8ff),
+                      color: AppColors.kIndianYellow,
+                      width: 1,
                     ),
                   ),
                   inputHint: "Enter your password",

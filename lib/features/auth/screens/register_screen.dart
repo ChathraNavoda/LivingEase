@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/custom_text_field.dart';
 import 'package:livingease/common/spacing.dart';
+import 'package:livingease/features/auth/screens/login_screen.dart';
 import 'package:livingease/features/auth/widgets/custom_button.dart';
 import 'package:livingease/theme/colors.dart';
 import 'package:livingease/theme/text_theme.dart';
@@ -62,7 +63,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: 150.w,
                   ),
                 ),
-                heightSpacer(20),
+                heightSpacer(10),
                 Align(
                   alignment: Alignment.center,
                   child: Text(
@@ -74,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-                heightSpacer(10),
+                heightSpacer(5),
                 Text(
                   "Username",
                   style: AppTextTheme.kLabelStyle,
@@ -84,7 +85,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
                     borderSide: const BorderSide(
-                      color: Color(0xffd1d8ff),
+                      color: AppColors.kIndianYellow,
                     ),
                   ),
                   inputHint: "Enter your username",
@@ -95,7 +96,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     return null;
                   },
                 ),
-                heightSpacer(15),
+                heightSpacer(5),
                 Text(
                   "First Name",
                   style: AppTextTheme.kLabelStyle,
@@ -116,7 +117,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     return null;
                   },
                 ),
-                heightSpacer(15),
+                heightSpacer(5),
                 Text(
                   "Last Name",
                   style: AppTextTheme.kLabelStyle,
@@ -126,7 +127,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
                     borderSide: const BorderSide(
-                      color: Color(0xffd1d8ff),
+                      color: AppColors.kIndianYellow,
+                    ),
+                  ),
+                  inputHint: "Enter your last name",
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Last Name is required!";
+                    }
+                    return null;
+                  },
+                ),
+                heightSpacer(5),
+                Text(
+                  "Email",
+                  style: AppTextTheme.kLabelStyle,
+                ),
+                CustomTextField(
+                  controller: email,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: const BorderSide(
+                      color: AppColors.kIndianYellow,
+                    ),
+                  ),
+                  inputHint: "Enter your email",
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Email is required!";
+                    }
+                    return null;
+                  },
+                ),
+                heightSpacer(5),
+                Text(
+                  "Phone",
+                  style: AppTextTheme.kLabelStyle,
+                ),
+                CustomTextField(
+                  controller: phone,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    borderSide: const BorderSide(
+                      color: AppColors.kIndianYellow,
                     ),
                   ),
                   inputHint: "Enter your last name",
@@ -138,28 +181,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   },
                 ),
                 heightSpacer(15),
-                Text(
-                  "Email",
-                  style: AppTextTheme.kLabelStyle,
-                ),
-                CustomTextField(
-                  controller: email,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(14),
-                    borderSide: const BorderSide(
-                      color: Color(0xffd1d8ff),
-                    ),
-                  ),
-                  inputHint: "Enter your email",
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Email is required!";
-                    }
-                    return null;
-                  },
-                ),
-                heightSpacer(15),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       height: 50.h,
@@ -167,16 +190,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(
                             width: 1,
-                            color: Color(0xFFDBAD5F),
+                            color: AppColors.kIndianYellow,
                           ),
                           borderRadius: BorderRadius.circular(14.r),
                         ),
                       ),
                       child: Row(
                         children: [
-                          widthSpacer(20),
+                          widthSpacer(25),
                           const Text('Block No.'),
-                          widthSpacer(8),
+                          widthSpacer(10),
                           DropdownButton(
                               value: selectedBlock,
                               items: blockOptions.map((String block) {
@@ -195,14 +218,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                     ),
-                    widthSpacer(20),
+                    widthSpacer(25),
                     Container(
                       height: 50.h,
                       decoration: ShapeDecoration(
                         shape: RoundedRectangleBorder(
                           side: const BorderSide(
                             width: 1,
-                            color: Color(0xFFDBAD5F),
+                            color: AppColors.kIndianYellow,
                           ),
                           borderRadius: BorderRadius.circular(14.r),
                         ),
@@ -211,7 +234,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         children: [
                           widthSpacer(20),
                           const Text('Room No.'),
-                          widthSpacer(8),
+                          widthSpacer(10),
                           DropdownButton<String>(
                               value: selectedRoom,
                               items: (selectedBlock == "A"
@@ -228,7 +251,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   selectedRoom = newValue;
                                 });
                               }),
-                          widthSpacer(20),
                         ],
                       ),
                     ),
@@ -244,6 +266,31 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     if (_formKey.currentState!.validate()) {}
                   },
                   size: 15,
+                ),
+                heightSpacer(30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Already have an account?"),
+                    widthSpacer(5),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Login",
+                        style: AppTextTheme.kLabelStyle.copyWith(
+                          fontSize: 14.sp,
+                          color: AppColors.kIndianYellow,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

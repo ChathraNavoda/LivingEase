@@ -25,7 +25,7 @@ class AppColors {
   static const Color kPrimaryColor = Color(0xFF11212E);
   static const Color kIndianYellow = Color(0xFFDBAD5F);
   static const Color kLightBlue = Color(0xFF6DA7FF);
-  static const Color kSecondaryColor = Color(0xFF0B2C47);
+  static const Color kSecondaryColor = Color(0xFF323232);
   static const Color kBackgroundColor = Colors.white;
   static const Color kFormLabelColor = kIndianYellow;
   static const Color kLight = Color(0xffffffff);
