@@ -3,7 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/custom_text_field.dart';
 import 'package:livingease/common/spacing.dart';
+import 'package:livingease/features/auth/screens/register_screen.dart';
 import 'package:livingease/features/auth/widgets/custom_button.dart';
+import 'package:livingease/theme/colors.dart';
+import 'package:livingease/theme/text_theme.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -61,10 +64,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   inputHint: "Enter your email",
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Email is required!";
+                    }
+                    return null;
+                  },
                 ),
                 heightSpacer(30),
                 CustomTextField(
-                  controller: email,
+                  controller: password,
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
                     borderSide: const BorderSide(
@@ -72,19 +81,47 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   inputHint: "Enter your password",
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return "Password is required!";
+                    }
+                    return null;
+                  },
                 ),
                 heightSpacer(30),
                 CustomButton(
                   buttonText: 'Login',
                   buttonColor: Colors.white,
-                  onTap: () {},
+                  onTap: () {
+                    if (_formKey.currentState!.validate()) {
+                      print("Validated!");
+                    }
+                  },
                   size: 16,
                 ),
                 heightSpacer(30),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account?"),
+                    const Text("Don't have an account?"),
+                    widthSpacer(5),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterScreen(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Register",
+                        style: AppTextTheme.kLabelStyle.copyWith(
+                          fontSize: 14.sp,
+                          color: AppColors.kIndianYellow,
+                        ),
+                      ),
+                    ),
                   ],
                 )
               ],

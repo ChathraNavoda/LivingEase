@@ -6,7 +6,7 @@ import 'package:livingease/theme/text_theme.dart';
 
 AppBar buildAppBar(BuildContext context, String? title) {
   return AppBar(
-    backgroundColor: AppColors.kGreenColor,
+    backgroundColor: AppColors.kIndianYellow,
     elevation: 0,
     leading: IconButton(
       onPressed: () {
