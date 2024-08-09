@@ -5,6 +5,7 @@ import 'package:livingease/common/custom_text_field.dart';
 import 'package:livingease/common/spacing.dart';
 import 'package:livingease/features/auth/screens/register_screen.dart';
 import 'package:livingease/features/auth/widgets/custom_button.dart';
+import 'package:livingease/features/home/screens/home_screen.dart';
 import 'package:livingease/theme/colors.dart';
 import 'package:livingease/theme/text_theme.dart';
 
@@ -95,9 +96,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   buttonText: 'Login',
                   buttonColor: Colors.white,
                   onTap: () {
-                    if (_formKey.currentState!.validate()) {
-                      print("Validated!");
-                    }
+                    // if (_formKey.currentState!.validate()) {
+                    //   print("Validated!");
+                    // }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
                   },
                   size: 16,
                 ),
