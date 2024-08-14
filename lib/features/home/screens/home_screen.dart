@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/spacing.dart';
+import 'package:livingease/features/home/widgets/category_card.dart';
 import 'package:livingease/theme/colors.dart';
 import 'package:livingease/theme/text_theme.dart';
 
@@ -60,14 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottomRight: Radius.circular(2),
                   ),
                 ),
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 242, 219, 179),
-                    blurRadius: 8,
-                    offset: Offset(2, 4),
-                    spreadRadius: 0,
-                  ),
-                ],
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -109,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           SvgPicture.asset(
                             AppConstants.createIssue,
-                            width: 30.0,
+                            width: 50.0,
                             height: 30.0,
                           ),
                           Text(
@@ -145,9 +138,63 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   heightSpacer(20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CategoryCard(
+                        category: "Room\nAvailability",
+                        image: AppConstants.roomAvailability,
+                        imageWidth: 50.0,
+                        imageHeight: 50.0,
+                        onTap: () {},
+                      ),
+                      CategoryCard(
+                        category: "All\nIssues",
+                        image: AppConstants.allIssues,
+                        imageWidth: 80.0,
+                        imageHeight: 50.0,
+                        onTap: () {},
+                      ),
+                      CategoryCard(
+                        category: "Staff\nMembers",
+                        image: AppConstants.staffMember,
+                        imageWidth: 50.0,
+                        imageHeight: 50.0,
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                  heightSpacer(20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CategoryCard(
+                        category: "Create\nStaff",
+                        image: AppConstants.createStaff,
+                        imageWidth: 70.0,
+                        imageHeight: 50.0,
+                        onTap: () {},
+                      ),
+                      CategoryCard(
+                        category: "Monthly\nRent",
+                        image: AppConstants.hostelFee,
+                        imageWidth: 70.0,
+                        imageHeight: 50.0,
+                        onTap: () {},
+                      ),
+                      CategoryCard(
+                        category: "Change\nRequest",
+                        image: AppConstants.roomChange,
+                        imageWidth: 80.0,
+                        imageHeight: 50.0,
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
+                  heightSpacer(20)
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
