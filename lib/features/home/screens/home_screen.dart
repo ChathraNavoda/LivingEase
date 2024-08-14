@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/spacing.dart';
 import 'package:livingease/features/home/widgets/category_card.dart';
+import 'package:livingease/features/tenants/screens/create_issue_screen.dart';
 import 'package:livingease/theme/colors.dart';
 import 'package:livingease/theme/text_theme.dart';
 
@@ -100,10 +101,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           vertical: 25, horizontal: 10),
                       child: Column(
                         children: [
-                          SvgPicture.asset(
-                            AppConstants.createIssue,
-                            width: 50.0,
-                            height: 30.0,
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CreateIssueScreen(),
+                                ),
+                              );
+                            },
+                            child: SvgPicture.asset(
+                              AppConstants.createIssue,
+                              width: 50.0,
+                              height: 30.0,
+                            ),
                           ),
                           Text(
                             "Create Issue",
@@ -178,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       CategoryCard(
                         category: "Monthly\nRent",
                         image: AppConstants.hostelFee,
-                        imageWidth: 70.0,
+                        imageWidth: 80.0,
                         imageHeight: 50.0,
                         onTap: () {},
                       ),
