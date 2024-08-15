@@ -52,8 +52,8 @@ class _CreateStaffScreenState extends State<CreateStaffScreen> {
                 const Center(
                   child: Image(
                     image: AssetImage(AppConstants.createStaff),
-                    height: 60,
-                    width: 60,
+                    height: 90,
+                    width: 90,
                   ),
                 ),
                 heightSpacer(10),

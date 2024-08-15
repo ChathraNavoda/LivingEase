@@ -96,9 +96,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   buttonText: 'Login',
                   buttonColor: Colors.white,
                   onTap: () {
-                    // if (_formKey.currentState!.validate()) {
-                    //   print("Validated!");
-                    // }
+                    if (_formKey.currentState!.validate()) {
+                      print("Validated!");
+                    }
                     Navigator.push(
                       context,
                       MaterialPageRoute(
