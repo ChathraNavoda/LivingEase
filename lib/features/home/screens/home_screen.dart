@@ -7,6 +7,7 @@ import 'package:livingease/features/admin/screens/create_staff_screen.dart';
 import 'package:livingease/features/admin/screens/staff_display_screen.dart';
 import 'package:livingease/features/home/widgets/category_card.dart';
 import 'package:livingease/features/tenants/screens/create_issue_screen.dart';
+import 'package:livingease/features/tenants/screens/room_availability_screen.dart';
 import 'package:livingease/theme/colors.dart';
 import 'package:livingease/theme/text_theme.dart';
 
@@ -160,7 +161,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         image: AppConstants.roomAvailability,
                         imageWidth: 50.0,
                         imageHeight: 50.0,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const RoomAvailabilityScreen(),
+                            ),
+                          );
+                        },
                       ),
                       CategoryCard(
                         category: "All\nIssues",
