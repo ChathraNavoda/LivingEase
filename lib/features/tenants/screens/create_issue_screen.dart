@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:livingease/common/app_bar.dart';
+import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/custom_text_field.dart';
 import 'package:livingease/common/spacing.dart';
 import 'package:livingease/features/auth/widgets/custom_button.dart';
@@ -35,18 +37,26 @@ class _CreateIssueScreenState extends State<CreateIssueScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: buildAppBar(context, 'Create Issue'),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-            vertical: 10.h,
+            vertical: 15.h,
             horizontal: 15.w,
           ),
           child: Form(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                heightSpacer(15),
+                Center(
+                  child: SvgPicture.asset(
+                    AppConstants.createIssue,
+                    width: 60.0,
+                    height: 60.0,
+                  ),
+                ),
+                heightSpacer(10),
                 Text(
                   "Apartment Number",
                   style: AppTextTheme.kPrimaryStyle,
