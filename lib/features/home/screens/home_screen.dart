@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/spacing.dart';
+import 'package:livingease/features/admin/screens/create_staff_screen.dart';
 import 'package:livingease/features/home/widgets/category_card.dart';
 import 'package:livingease/features/tenants/screens/create_issue_screen.dart';
 import 'package:livingease/theme/colors.dart';
@@ -185,7 +186,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         image: AppConstants.createStaff,
                         imageWidth: 70.0,
                         imageHeight: 50.0,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CreateStaffScreen(),
+                            ),
+                          );
+                        },
                       ),
                       CategoryCard(
                         category: "Monthly\nRent",
