@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:livingease/common/constant.dart';
 import 'package:livingease/common/spacing.dart';
+import 'package:livingease/features/admin/screens/annex_change_req_screen.dart';
 import 'package:livingease/features/admin/screens/create_staff_screen.dart';
 import 'package:livingease/features/admin/screens/issue_screen.dart';
 import 'package:livingease/features/admin/screens/staff_display_screen.dart';
@@ -232,7 +233,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         image: AppConstants.roomChange,
                         imageWidth: 80.0,
                         imageHeight: 50.0,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const AnnexChangeReqScreen(),
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
